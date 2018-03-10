@@ -71092,11 +71092,11 @@ angular.module('mm.addons.mod_workshop')
 angular.module('mm.core')
 
 .constant('mmCoreConfigConstants', {
-    "app_id" : "nested.ust.elearning",
-    "appname": "U.S.T Elerning",
-    "desktopappname": "U.S.T Elerning",
+    "app_id" : "com.desire.elearning",
+    "appname": "Desire",
+    "desktopappname": "Desire",
     "versioncode" : "2001",
-    "versionname" : "1.0.2",
+    "versionname" : "1.0.1",
     "cache_expiration_time" : 300000,
     "default_lang" : "en",
     "languages": {"ar": "عربي","en": "English"},
@@ -71104,7 +71104,7 @@ angular.module('mm.core')
     "wsextservice" : "local_mobile",
     "gcmpn": "694767596569",
     "customurlscheme": "ustelearning",
-    "siteurl": "https://www.ust-elearning.net",
+    "siteurl": "https://www.desire2elearning.com",
     "multisitesdisplay": "select",
     "skipssoconfirmation": "false",
     "forcedefaultlanguage": "false",
