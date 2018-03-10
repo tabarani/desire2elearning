@@ -2,13 +2,13 @@
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
         xmlns:android = "http://schemas.android.com/apk/res/android"
-        id        = "net.ust.elearning"
+        id        = "com.desire.elearning"
         versionCode = "2001"
-        version   = "1.0.2">
-    <name>U.S.T Elearning</name>
+        version   = "1.0.1">
+    <name>Desire</name>
 
     <description>
-        University of Science and Technology education app.
+        Desire 2 Elearning is initiative for supporting the primary level eduction in sudan, it is the step to the next generation education. 
     </description>
 
     <author href="http://isco.ca" email="innovative@isco.ca">
@@ -16,7 +16,7 @@
     </author>
 
     <gap:config-file platform="ios" parent="CFBundleShortVersionString">
-        <string>1.0.5</string>
+        <string>1.0.1</string>
     </gap:config-file>
 
     <gap:platform name="ios" />
