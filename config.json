@@ -1,0 +1,19 @@
+{
+    "app_id" : "net.ust.elearning",
+    "appname": "U.S.T Elerning",
+    "desktopappname": "U.S.T Elerning",
+    "versioncode" : "2001",
+    "versionname" : "1.0.5",
+    "cache_expiration_time" : 300000,
+    "default_lang" : "en",
+    "languages": {"ar": "عربي", "en": "English"},
+    "wsservice" : "moodle_mobile_app",
+    "wsextservice" : "local_mobile",
+    "gcmpn": "694767596569",
+    "customurlscheme": "ustelearning",
+    "siteurl": "https://www.ust-elearning.net",
+    "multisitesdisplay": "select",
+    "skipssoconfirmation": "false",
+    "forcedefaultlanguage": "false",
+    "privacypolicy": "https://www.ust-elearning.net/policy/mobile.html"
+}
