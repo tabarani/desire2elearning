@@ -71093,10 +71093,10 @@ angular.module('mm.core')
 
 .constant('mmCoreConfigConstants', {
     "app_id" : "com.desire.elearning",
-    "appname": "Desire",
+    "appname": "Desire eschool",
     "desktopappname": "Desire",
     "versioncode" : "2001",
-    "versionname" : "1.0.1",
+    "versionname" : "1.0.2",
     "cache_expiration_time" : 300000,
     "default_lang" : "en",
     "languages": {"ar": "عربي","en": "English"},
