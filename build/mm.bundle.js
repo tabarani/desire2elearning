@@ -71104,10 +71104,10 @@ angular.module('mm.core')
     "wsextservice" : "local_mobile",
     "gcmpn": "694767596569",
     "customurlscheme": "ustelearning",
-    "siteurl": "https://www.desire2elearning.com",
+    "siteurl": "https://www.d2el.com",
     "multisitesdisplay": "select",
     "skipssoconfirmation": "false",
     "forcedefaultlanguage": "false",
-    "privacypolicy": "https://www.ust-elearning.net/policy/mobile.html"
+    "privacypolicy": "https://www.d2el.com/privacy_policy.html"
 }
 );
