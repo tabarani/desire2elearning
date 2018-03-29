@@ -71095,7 +71095,7 @@ angular.module('mm.core')
     "app_id" : "com.desire.elearning",
     "appname": "Desire eschool",
     "desktopappname": "Desire",
-    "versioncode" : "2001",
+    "versioncode" : "201802",
     "versionname" : "1.0.2",
     "cache_expiration_time" : 300000,
     "default_lang" : "en",

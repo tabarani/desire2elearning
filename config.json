@@ -2,7 +2,7 @@
     "app_id" : "com.desire.elearning",
     "appname": "Desire",
     "desktopappname": "Desire eschool",
-    "versioncode" : "2001",
+    "versioncode" : "201802",
     "versionname" : "1.0.2",
     "cache_expiration_time" : 300000,
     "default_lang" : "en",
