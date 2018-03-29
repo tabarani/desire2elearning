@@ -4,8 +4,8 @@
         xmlns:android = "http://schemas.android.com/apk/res/android"
         id        = "com.desire.elearning"
         versionCode = "2001"
-        version   = "1.0.1">
-    <name>Desire</name>
+        version   = "1.0.2">
+    <name>Desire eschool</name>
 
     <description>
        Desire2elearning is initiative in the Sudanese primary level education, its the next step in the future education for the future generation. it first starts by Innovative Solutions.
