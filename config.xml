@@ -34,6 +34,11 @@
 
     <allow-intent href="*" />
 
+
+    <gap:plugin name="cordova-android-support-gradle-release" source="npm" >
+        <variable name = "ANDROID_SUPPORT_VERSION" value = "27.1.0" /> <!--forces plugins to use same version of android support library-->
+    </gap:plugin>
+
     <preference name="phonegap-version" value="cli-6.5.0" />
     <preference name="orientation"      value="default" />
     <preference name="target-device"    value="universal" />
