@@ -15610,12 +15610,7 @@ angular.module('mm.core.courses')
                             img: 'img/icons/paypal.png'
                         });
                     }
-                    else if (instance === 'paybank') {
-                        course.enrollment.push({
-                            name: $translate.instant('mm.courses.paybankaccepted'),
-                            img: 'img/icons/paybank.png'
-                        });
-                    }
+                
                 });
                 if (course.enrollment.length == 0) {
                     course.enrollment.push({
@@ -15958,7 +15953,6 @@ angular.module('mm.core.courses')
         enrolUrl = $mmFS.concatenatePaths($mmSite.getURL(), 'enrol/index.php?id=' + course.id),
         courseUrl = $mmFS.concatenatePaths($mmSite.getURL(), 'course/view.php?id=' + course.id),
         paypalReturnUrl = $mmFS.concatenatePaths($mmSite.getURL(), 'enrol/paypal/return.php'),
-        paybankReturnUrl = $mmFS.concatenatePaths($mmSite.getURL(), 'enrol/paybank/return.php'),
         inAppLoadListener,
         inAppFinishListener,
         inAppExitListener,
@@ -16191,48 +16185,6 @@ angular.module('mm.core.courses')
                 if (event.url.indexOf(paypalReturnUrl) != -1) {
                     hasReturnedFromPaypal = true;
                 } else if (event.url.indexOf(courseUrl) != -1 && hasReturnedFromPaypal) {
-                    inAppClosed();
-                    $mmUtil.closeInAppBrowser();
-                }
-            }
-            function inAppClosed() {
-                stopListeners();
-                if (!$scope.courseLoaded) {
-                    return;
-                }
-                $scope.courseLoaded = false;
-                refreshData();
-            }
-        };
-    }
-    if (course.enrollmentmethods && course.enrollmentmethods.indexOf('paybank') > -1) {
-        $scope.paybankEnabled = true;
-        $scope.paybankEnrol = function() {
-            var hasReturnedFrompaybank = false;
-            stopListeners();
-            $mmSite.openInAppWithAutoLogin(enrolUrl);
-            inAppLoadListener = $rootScope.$on('$cordovaInAppBrowser:loadstart', urlLoaded);
-            if (!$mmApp.isDevice()) {
-                inAppFinishListener = $rootScope.$on('$cordovaInAppBrowser:loadstop', urlLoaded);
-                appResumeListener = $ionicPlatform.on('resume', function() {
-                    if (!$scope.courseLoaded) {
-                        return;
-                    }
-                    $scope.courseLoaded = false;
-                    refreshData();
-                });
-            }
-            inAppExitListener = $rootScope.$on('$cordovaInAppBrowser:exit', inAppClosed);
-            function stopListeners() {
-                inAppLoadListener && inAppLoadListener();
-                inAppFinishListener && inAppFinishListener();
-                inAppExitListener && inAppExitListener();
-                appResumeListener && appResumeListener();
-            }
-            function urlLoaded(e, event) {
-                if (event.url.indexOf(paybankReturnUrl) != -1) {
-                    hasReturnedFrompaybank = true;
-                } else if (event.url.indexOf(courseUrl) != -1 && hasReturnedFrompaybank) {
                     inAppClosed();
                     $mmUtil.closeInAppBrowser();
                 }
