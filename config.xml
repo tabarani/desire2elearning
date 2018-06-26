@@ -2,21 +2,21 @@
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
         xmlns:android = "http://schemas.android.com/apk/res/android"
-        id        = "com.desire.elearning"
-        versionCode = "201802"
-        version   = "1.0.3">
-    <name>Desire eschool</name>
+        id        = "com.moodle.moodlemobile"
+        versionCode = "20230"
+        version   = "3.4.2">
+    <name>Moodle Mobile</name>
 
     <description>
-       Desire2elearning is initiative in the Sudanese primary level education, its the next step in the future education for the future generation. it first starts by Innovative Solutions.
+        Moodle Mobile official app
     </description>
 
-    <author href="http://isco.ca" email="innovative@isco.ca">
-        Innovative Development team
+    <author href="http://moodle.com" email="mobile@moodle.com">
+        Moodle Mobile team
     </author>
 
     <gap:config-file platform="ios" parent="CFBundleShortVersionString">
-        <string>1.0.1</string>
+        <string>3.4.2</string>
     </gap:config-file>
 
     <gap:platform name="ios" />
@@ -34,11 +34,6 @@
 
     <allow-intent href="*" />
 
-
-    <gap:plugin name="cordova-android-support-gradle-release" source="npm" >
-        <variable name = "ANDROID_SUPPORT_VERSION" value = "27.1.0" /> <!--forces plugins to use same version of android support library-->
-    </gap:plugin>
-
     <preference name="phonegap-version" value="cli-6.5.0" />
     <preference name="orientation"      value="default" />
     <preference name="target-device"    value="universal" />
@@ -49,6 +44,7 @@
     <preference name="load-url-timeout" value="60000" />
     <preference name="AppendUserAgent" value="MoodleMobile" />
     <preference name="android-minSdkVersion" value="14" />
+    <preference name="android-targetSdkVersion" value="19" />
     <preference name="android-installLocation" value="auto" />
     <preference name="UIWebViewBounce" value="false" />
     <preference name="DisallowOverscroll" value="true" />
@@ -56,12 +52,12 @@
     <preference name="KeyboardDisplayRequiresUserAction" value="false" />
     <preference name="AllowInlineMediaPlayback" value="true" />
     <preference name="SplashMaintainAspectRatio" value="true" />
-    <preference name="AndroidPersistentFileLocation" value="Compatibility" />
 
     <feature name="StatusBar">
         <param name="ios-package" value="CDVStatusBar" onload="true"/>
     </feature>
 
+    <preference name="AndroidPersistentFileLocation"    value="Compatibility" />
     <preference name="iosPersistentFileLocation"        value="Compatibility" />
 
     <icon src="icon.png" />
@@ -152,7 +148,7 @@
     <gap:plugin name="ch.ti8m.documenthandler" spec="https://github.com/ti8m/DocumentHandler.git" source="git" />
 
     <gap:config-file platform="android" parent="/manifest">
-         <application android:debuggable="false" />
+         <application android:debuggable="true" />
     </gap:config-file>
 
     <!-- See MOBILE-892 -->

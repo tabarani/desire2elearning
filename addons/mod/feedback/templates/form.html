@@ -12,7 +12,9 @@
                 </div>
                 <div class="list" ng-if="items && items.length">
                     <div ng-repeat="item in items track by $index" class="item item-text-wrap" ng-class="{'item-input item-stacked-label' : item.hasvalue, 'item-divider': item.typ == 'pagebreak', 'item-stable': item.dependitem > 0, 'mm-error-item': item.isEmpty || item.hasError}">
-                        <p class="item-heading" mm-mark-required="{{item.required}}" ng-if="item.name"><span ng-if="item.itemnumber">{{item.itemnumber}}. </span>{{ item.name }}</p>
+                        <p class="item-heading" mm-mark-required="{{item.required}}" ng-if="item.name"><span ng-if="item.itemnumber">{{item.itemnumber}}. </span>
+                            <mm-format-text watch="true">{{ item.name }}</mm-format-text>
+                        </p>
                         <div class="item-text-wrap" ng-class="item.class" ng-if="item.template" ng-include="item.template"></div>
                     </div>
                 </div>
@@ -35,28 +37,28 @@
                 </script>
 
                 <script type="text/ng-template" id="multichoice-r">
-                    <ion-radio ng-required="{{item.required}}" name="{{item.typ}}_{{item.id}}" ng-model="item.value" ng-value="option.value" ng-repeat="option in item.choices">{{option.label}}</ion-radio>
+                    <ion-radio ng-required="{{item.required}}" name="{{item.typ}}_{{item.id}}" ng-model="item.value" ng-value="option.value" ng-repeat="option in item.choices">
+                        <mm-format-text watch="true">{{option.label}}</mm-format-text>
+                    </ion-radio>
                 </script>
 
                 <script type="text/ng-template" id="multichoice-c">
-                    <ion-checkbox ng-required="{{item.required}}" name="{{item.typ}}_{{item.id}}" ng-model="option.checked" ng-value="option.value" ng-repeat="option in item.choices">{{option.label}}</ion-checkbox>
+                    <ion-checkbox ng-required="{{item.required}}" name="{{item.typ}}_{{item.id}}" ng-model="option.checked" ng-value="option.value" ng-repeat="option in item.choices">
+                        <mm-format-text watch="true">{{option.label}}</mm-format-text>
+                    </ion-checkbox>
                 </script>
 
                 <script type="text/ng-template" id="multichoice-d">
-                    <select ng-required="{{item.required}}" name="{{item.typ}}_{{item.id}}" ng-model="item.value" ng-options="option.value as option.label for option in item.choices" mm-ios-select-fix>
+                    <select ng-required="{{item.required}}" name="{{item.typ}}_{{item.id}}" ng-model="item.value" mm-ios-select-fix>
+                        <option ng-value="option.value" ng-repeat="option in item.choices"><mm-format-text watch="true">{{option.label}}</mm-format-text></option>
                     </select>
                 </script>
 
                 <script type="text/ng-template" id="captcha">
-                    <div ng-if="!preview && item.captcha && item.captcha.challengehash && item.captcha.imageurl && !offline">
-                        <img ng-src="{{item.captcha.imageurl}}" alt="{{ 'mm.login.recaptchachallengeimage' | translate }}">
-                        <ion-input class="item-input">
-                            <input type="text" name="recaptcharesponse" placeholder="{{ 'mm.login.enterthewordsabove' | translate }}" ng-model="item.value" autocapitalize="none" autocorrect="off" required>
-                        </ion-input>
-                        <!-- Use anchor instead of button to prevent marking form as submitted. -->
-                        <a class="button button-block" ng-click="requestCaptcha(item)">{{ 'mm.login.getanothercaptcha' | translate }}</a>
-                    </div>
-                    <div ng-if="!preview && (!item.captcha || !item.captcha.challengehash || !item.captcha.imageurl || offline)" class="mm-warning-card-icon">
+                    <!-- ReCaptcha element. -->
+                    <mm-recaptcha ng-if="!preview && !offline" publickey="{{item.captcha.recaptchapublickey}}" challengehash="{{item.captcha.challengehash}}" challengeimage="{{item.captcha.imageurl}}" model="item" model-value-name="value" request-captcha="requestCaptcha(item)"></mm-recaptcha>
+                    <!-- ReCaptcha not supported warning. -->
+                    <div ng-if="!preview && (!item.captcha || offline)" class="mm-warning-card-icon">
                         <i class="icon ion-alert-circled padding"></i> {{ 'mma.mod_feedback.captchaofflinewarning' | translate }}
                     </div>
                 </script>
